@@ -12,12 +12,12 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-# GraphQl
- gem 'graphql', '~> 2.0', '>= 2.0.21'
-
-# Pagination
-gem "graphql-pagination", "~> 2.1"
 gem 'will_paginate', '~> 3.3'
+
+# generate token for authentication
+gem 'jwt', '~> 2.7'
+
+gem 'active_model_serializers'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -29,7 +29,7 @@ gem 'will_paginate', '~> 3.3'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+ gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -57,7 +57,6 @@ end
 
 group :development do
   # Provides a user interface to interact with a GraphQL API in the application development environment.
-  gem 'graphiql-rails', '~> 1.9'
 end
 
 group :test do

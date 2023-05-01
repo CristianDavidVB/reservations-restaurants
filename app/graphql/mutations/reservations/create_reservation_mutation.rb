@@ -14,7 +14,9 @@ module Mutations
         reservation = Reservation.new(attributes)
 
         if reservation.save
+          ReservationConfirmationMailer.reservation_confirmation(reservation).deliver_now
           { reservation: reservation, errors:[] }
+
         else
           { reservation: nil, errors: reservation.errors.full_messages }
         end
